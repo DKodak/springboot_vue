@@ -54,6 +54,9 @@
       </if>
     </trim>
   </insert>
+  <insert id="register">
+
+  </insert>
 
   <update id="updateByPrimaryKeySelective" parameterType="com.kd.springboot_vue.model.UserInfo" >
     update user_info
