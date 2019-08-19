@@ -11,6 +11,7 @@ src则是后端 端口为8880
 开发环境：
   IDEA+Mysql+springboot+Vue
 开发步骤
+
     1  本地搭建sringboot项目并自己写一个后台逻辑这里不细说不懂自己看代码。
     
     2  首先本地需要安装好node.js
