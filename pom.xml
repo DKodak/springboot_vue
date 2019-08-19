@@ -18,6 +18,13 @@
         <java.version>1.8</java.version>
     </properties>
     <dependencies>
+        <!--springboot对lombok做支持-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.6</version>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -43,7 +50,6 @@
             <artifactId>commons-lang3</artifactId>
             <version>3.4</version>
         </dependency>
-
 
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
@@ -76,6 +82,18 @@
     </dependencies>
 
     <build>
+        <resources>
+            <resource>
+                <directory>src/java/main</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
