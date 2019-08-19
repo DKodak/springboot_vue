@@ -16,8 +16,10 @@ public interface UserInfoDao {
     int updateByPrimaryKeySelective(UserInfo record);
 
     int updateByPrimaryKey(UserInfo record);
-
+    //登录查询
     UserInfo queryLogin(UserInfo userInfo);
-
+    //查询全部
     List<UserInfo> queryUser();
+    //注册
+    UserInfo register(UserInfo userInfo);
 }

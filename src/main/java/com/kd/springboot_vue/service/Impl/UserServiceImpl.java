@@ -51,4 +51,23 @@ public class UserServiceImpl implements UserService {
 		}
 		return userInfos;
 	}
+
+	@Override
+	public MyResult register(UserInfo user) {
+		int results=userInfoDao.insert(user);
+		MyResult result=new MyResult();
+		if (results>0){
+			result.setCode(200);
+			result.setMsg("注册成功!");
+		}else {
+			result.setCode(500);
+			result.setMsg("注册失败!");
+		}
+		return result;
+	}
+
+	@Override
+	public UserInfo queryorUser(UserInfo userInfo) {
+		return userInfoDao.queryLogin(userInfo);
+	}
 }

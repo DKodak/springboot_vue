@@ -18,6 +18,23 @@ public interface UserService {
 	 */
 	MyResult login(UserInfo user);
 
-
+	/**
+	 * 查询全部数据
+	 * @return
+	 */
 	List<UserInfo> queryUser();
+
+	/**
+	 * 注册
+	 * @param user
+	 * @return
+	 */
+	MyResult register(UserInfo user);
+
+	/**
+	 * 查询是否存在改用户
+	 * @param userInfo
+	 * @return
+	 */
+	UserInfo queryorUser(UserInfo userInfo);
 }
