@@ -2,7 +2,7 @@
       <table id="login" align="center" >
         <tr>
           <td colspan="2">用户登录</td></tr>
-          <tr>
+        <tr>
             <td>用户名:</td>
             <td><input type="text" v-model="user.username"/></td>
           </tr>
@@ -12,8 +12,11 @@
           <td><input type="password" v-model="user.password"/></td>
         </tr>
 
-        <tr>
-          <td colspan="2"><input type="submit" @click="login" value="登录"/></td>
+        <tr align="center" >
+
+         <td colspan="2">
+           <input type="submit"   @click="login" value="登录"/>
+           <input type="submit"   @click="register" value="注册"/></td>
         </tr>
       </table>
 </template>
@@ -46,32 +49,24 @@
              this.$router.push({
                path:'/success'
              })
+           }else {
+             this.user.password='';
+             alert(result.data.msg);
+             this.$router.push({
+               path:'/login'
+             })
            }
          }).catch(result=>{
            console.log(result)
          })
 
-         // this.post("localhost:8880/user/login",qs.stringify(user)).then(result =>{
-         //   console.log(result.body);
-         //   if (result.data().state()==200){
-         //     that.$router.push({
-         //       path:'/'
-         //     })
-         //   }
-         // }).catch(function (reason) {
-         //      console.log(reason)
-         //    })
-        // this.http.post("localhost:8880/user/login",qs.stringify(user)).then(function (params) {
-        //    console.log(params);
-        //    if (params.data().status===200) {
-        //      that.$router.push({
-        //        path:'/success'
-        //      })
-        //    }
-        //  }).catch(function (reason) {
-        //    console.log(reason)
-        //  })
-       }
+
+       },
+        register(){
+          this.$router.push( {
+            path:'/register'
+          })
+        }
       }
     }
 </script>
