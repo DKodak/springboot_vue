@@ -1,5 +1,9 @@
 # springboot_vue
-实现前后端分离  并整合spirngboot+vue
+  自己摸索并搭建然后实现的前后端分离 。
+  
+  后端采用当前流行的springboot
+  
+  前端采用vue
 
 
 demo为前端 端口为8080
