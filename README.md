@@ -45,4 +45,30 @@ src则是后端 端口为8880
         3.1 Setup e2e tests with Nightwatch（也是测试相关）：n
         
         3.2 Should we run `npm install` for you after the project has been created? (recommended)：选择：No, I will handle that myself
+        
+4 搭建好了之后目录结果下会出现你刚刚输入的对应的项目名称并打开
+    有
+      build  （各种编译用的配置文件详细看package.json中的scripts里面一般有调用的。）
+      
+      config  （开发环境  注意需要index.js中配置反向代理）
+      
+      node_modules （应该是一些依赖包）
+      
+      src           （开发的地方）
+      
+          assets    （存放图片、UI设计的图标文件 ）
+          
+          components  （自研的业务型及通用型组件  也就是说自己写的vue就扔这里）
+          
+          router      （项目的路由管理模块）
+          
+          App.vue     （默认的首页）
+          
+          main.js     （入口）
+          
+      static    （静态文件吧）
+        
+  
+    后续会集成shiro + redis 实现一些简单的小功能 。仅未自己成长技术！
+    2019-8-19 23点29分
   
