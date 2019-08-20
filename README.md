@@ -2,7 +2,7 @@
   自己摸索并搭建然后实现的前后端分离 。
   
   后端采用当前流行的springboot，其中model和dao是使用mybaits的逆向生成（generatorConfig.xml  在resources的generator目录下）
-  springboot采用devtools实现热部署    使用druid作为数据库连接管理
+  springboot采用devtools实现热部署    使用druid作为数据库连接管理   分页采用pagehelper
   
   前端采用vue   使用nmp下载
 
