@@ -1,9 +1,9 @@
 # springboot_vue
   自己摸索并搭建然后实现的前后端分离 。
   
-  后端采用当前流行的springboot
+  后端采用当前流行的springboot，其中model和dao是使用mybaits的逆向生成（generatorConfig.xml  在resources的generator目录下）
   
-  前端采用vue
+  前端采用vue   使用nmp下载
 
 
 demo为前端 端口为8080
@@ -13,7 +13,7 @@ src则是后端 端口为8880
 
 
 开发环境：
-  IDEA+Mysql+springboot+Vue
+  IDEA+Mysql+springboot+Vue+Mybaits
 开发步骤
 
     1  本地搭建sringboot项目并自己写一个后台逻辑这里不细说不懂自己看代码。
