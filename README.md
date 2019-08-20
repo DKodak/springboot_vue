@@ -24,7 +24,7 @@ src则是后端 端口为8880
     
         2.1 右键项目名称找到  "open in Terminal"
         
-        2.2 输入  vue init webpack project-name（这里为你的项目名称 列我的为demo）
+        2.2 输入  vue init webpack  demo（这里为你的项目名称 列我的为demo）
         
         2.3 提示目录已存在，是否继续：Y
         
