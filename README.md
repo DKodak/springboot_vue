@@ -7,7 +7,7 @@
           
           springboot采用devtools实现热部署    使用druid作为数据库连接管理     分页采用pagehelper
           
-          并加入swgger2
+          并加入swgger2  （http://localhost:8880/swagger-ui.html#!/   swgger2的ui页面 ）
   
   前端采用vue   使用nmp下载
 
