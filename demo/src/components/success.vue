@@ -1,15 +1,19 @@
 <template>
-  <div>
-    <table align="center" bgcolor="blue" cellspacing="1" width="70%">
+  <div class="container">
+  <div class="row" style="margin-top:20px; text-align:center">
+    <table  class="table table-bordered " style="text-align: center">
       <tr bgcolor="white">
           <td><span>ID</span></td>
           <td><span>员工姓名</span></td>
           <td><span>操作</span></td>
       </tr>
       <tr v-for="u in userlist" bgcolor="white">
-        <td><span>{{u.id}}</span></td>
-        <td><span>{{u.username}}</span></td>
-        <td><span><a href="#">修改</a></span> <span><a href="#">删除</a></span></td>
+        <td name="user.id"><span>{{u.id}}</span></td>
+        <td name="user.username"><span>{{u.username}}</span></td>
+        <td>
+          <a href="javascript:void(0)" @click="toupd(u.id)" >修改</a>
+          <a href="javascript:void(0)" @click="del(u.id)">删除</a>
+        </td>
       </tr>
       <tr>
 
@@ -17,7 +21,7 @@
     </table>
     <router-link to="/">返回</router-link>
   </div>
-
+  </div>
 </template>
 
 <script>
@@ -26,6 +30,7 @@
        data(){
          return{
            user:{
+             id:'',
              username:'',
              password:''
            },
@@ -48,7 +53,24 @@
              }
 
            })
-         }
+         },
+        update(){
+
+        },
+        del(id){
+           var  bln=confirm("是否确认删除数据！");
+           if (!bln){
+             return false;
+           }
+           this.$axios.post("/springboot/user/delete?id="+ id).then(result=>{
+              if (result.data.code==200){
+                alert(result.data.msg);
+                this.all();
+              }else {
+                alert(result.data.msg);
+              }
+           })
+        },
       }
     }
 </script>

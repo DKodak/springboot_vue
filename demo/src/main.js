@@ -6,6 +6,11 @@ import App from './App'
 import router from './router'
 import axios from 'axios'  //引入axios并页面使用axios发送请求
 import cong from '../vue.config.js'
+import $ from 'jquery'   //3 定义全局jquery
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap.min.js'
+
+
 
 
 //这里定义全局变量
