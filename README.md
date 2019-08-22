@@ -93,7 +93,7 @@ src则是后端 端口为8880
         
         2 然后model.exports中加入    （popper.js也是bootstrap需要依赖的js ）
         
-        3  plugins: [
+        plugins: [
             new webpack.ProvidePlugin({
             $:"jquery",
             jQuery:"jquery",
@@ -101,15 +101,17 @@ src则是后端 端口为8880
            Popper: ['popper.js', 'default'],
          })
         ],
+        并要在 resolve的下面加入
+        'assets':path.resolve(__dirname,'../src/assets')
         
         4 然后在main.js中定义全部变量
         
         import $ from 'jquery'   //3 定义全局jquery
         
-        import 'bootstrap/dist/css/bootstrap.min.css'
+        import 'bootstrap/dist/css/bootstrap.min.css'  （后面为你安装的路径）
         
-        import 'bootstrap/dist/js/bootstrap.min.js'
+        import 'bootstrap/dist/js/bootstrap.min.js' （后面为你安装的路径）
         
-        5然后页面就可以去使用了
+        5  ok！
   
   
