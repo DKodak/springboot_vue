@@ -77,3 +77,39 @@ src则是后端 端口为8880
   后续会集成shiro + redis 实现一些简单的小功能 。仅为自己成长技术！
   2019-8-19 23点29分
   
+  1 先控制台下载
+  
+    cnpm install  popper.js -S   //bootstrap需要该js
+    
+    cnpm install bootstrap -S    //安装bootstrap
+    
+    npm install jquery -sava-dev //安装jq
+    
+    下载完成后后可以在package.json中查看安装的版本
+  
+ 2 引入jquery和bootstrap
+ 
+        1 首先webpack.base.conf.js中加入  const webpack = require("webpack");
+        
+        2 然后model.exports中加入    （popper.js也是bootstrap需要依赖的js ）
+        
+        3  plugins: [
+            new webpack.ProvidePlugin({
+            $:"jquery",
+            jQuery:"jquery",
+           "windows.jQuery":"jquery",
+           Popper: ['popper.js', 'default'],
+         })
+        ],
+        
+        4 然后在main.js中定义全部变量
+        
+        import $ from 'jquery'   //3 定义全局jquery
+        
+        import 'bootstrap/dist/css/bootstrap.min.css'
+        
+        import 'bootstrap/dist/js/bootstrap.min.js'
+        
+        5然后页面就可以去使用了
+  
+  
