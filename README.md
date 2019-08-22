@@ -77,6 +77,8 @@ src则是后端 端口为8880
   后续会集成shiro + redis 实现一些简单的小功能 。仅为自己成长技术！
   2019-8-19 23点29分
   
+  安装jQuery和bootstrap教程
+  
   1 先控制台下载
   
     cnpm install  popper.js -S   //bootstrap需要该js
