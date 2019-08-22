@@ -26,9 +26,16 @@ public class UserController {
 	public MyResult login(@RequestBody UserInfo user){
 		System.out.println("进来了"+user);
 		//解密登录
-		String pwd=MD5Util.convertMD5(MD5Util.convertMD5(user.getPassword()));
-		user.setPassword(pwd);
+		String pwd=user.getPassword();
+		String pwds=MD5Util.string2MD5(user.getPassword());
+		user.setPassword(pwds);
 		MyResult myResult=userService.login(user);
+		System.out.println(myResult.getCode()==500);
+		if (myResult.getCode()==500){
+			//防止老用户密码未加密
+			user.setPassword(pwd);
+			 myResult=userService.login(user);
+		}
 		System.out.println(myResult);
 		return myResult;
 	}
@@ -58,6 +65,14 @@ public class UserController {
 	public List<UserInfo> queryUser(){
 		System.out.println("查询全部数据");
 		return userService.queryUser();
+	}
+
+
+	@PostMapping("/delete")
+	public MyResult delete(UserInfo user){
+		System.out.println("进入了删除");
+		System.out.println(user);
+		return userService.deleteById(user);
 	}
 
 	@GetMapping("/hello")

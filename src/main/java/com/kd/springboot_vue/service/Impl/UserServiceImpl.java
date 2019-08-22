@@ -22,7 +22,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public MyResult login(UserInfo user) {
 		UserInfo u=	userInfoDao.queryLogin(user);
-		System.out.println("进入了impl");
+		System.out.println("进入了impl"+u);
 		MyResult result=new MyResult();
 		if (u!=null){
 			result.setCode(200);
@@ -69,5 +69,20 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public UserInfo queryorUser(UserInfo userInfo) {
 		return userInfoDao.queryLogin(userInfo);
+	}
+
+	@Override
+	public MyResult deleteById(UserInfo userInfo) {
+		System.out.println(userInfo.getId()+"id");
+		 int reltsts=userInfoDao.deleteByPrimaryKey(userInfo.getId());
+		 MyResult myResult=new MyResult();
+		 if (reltsts>0){
+		 	myResult.setCode(200);
+		 	myResult.setMsg("删除成功！");
+		 }else {
+			 myResult.setCode(500);
+			 myResult.setMsg("删除失败！");
+		 }
+		return myResult;
 	}
 }

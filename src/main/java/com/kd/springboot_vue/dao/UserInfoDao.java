@@ -22,4 +22,5 @@ public interface UserInfoDao {
     List<UserInfo> queryUser();
     //注册
     UserInfo register(UserInfo userInfo);
+
 }

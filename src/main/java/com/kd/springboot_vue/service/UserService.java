@@ -37,4 +37,11 @@ public interface UserService {
 	 * @return
 	 */
 	UserInfo queryorUser(UserInfo userInfo);
+
+	/**
+	 * 根据id删除
+	 * @param userInfo
+	 * @return
+	 */
+	MyResult deleteById(UserInfo userInfo);
 }
