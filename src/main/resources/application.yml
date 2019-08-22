@@ -33,11 +33,22 @@ spring:
       #打开PSCache，并指定每个连接上PSCache的大小。oracle设为true，mysql设为false。分库分表较多推荐设置为false
       pool-prepared-statements: false
       max-pool-prepared-statement-per-connection-size: 20
+  #关闭缓存  实时刷新
+  freemarker:
+    cache: false
+    #如果开启此处会导致每次输入删除都会自动刷新哪怕你没保存
+  thymeleaf:
+    cache: false
+  #启用热部署
+  devtools:
+    restart:
+      enabled: true
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml #注意：一定要对应mapper映射xml文件的所在路径
   type-aliases-package: com.kd.springboot_vue.model # 注意：对应实体类的路径
-
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 #pagehelper
 pagehelper:
   helperDialect: mysql
